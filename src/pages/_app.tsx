@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -12,6 +13,10 @@ export default function App({ Component, pageProps }: AppProps) {
     ></script>
   </Head>
   <Component {...pageProps} />
+  <div className="sticky bottom-0 left-0 right-0">
+
+  <Footer />
+  </div>
 </>
 
 }

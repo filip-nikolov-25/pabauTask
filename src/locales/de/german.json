@@ -1,0 +1,25 @@
+{
+    "status": "Status",
+    "alive": "LEBEN",
+    "dead": "TOT",
+    "unknown": "UNBEKANNT",
+    "filterBySpecies": "Nach Art filtern",
+    "sortBy": "Sortieren nach",
+    "sortByName": "Sortieren nach Name",
+    "ascending": "Aufsteigend",
+    "descending": "Absteigend",
+    "sortByOrigin": "Sortieren nach Ursprung",
+    "filterByGender": "Nach Geschlecht filtern",
+    "male": "Männlich",
+    "female": "Weiblich",
+    "all": "Alle",
+    "title": "Rick und Morty Charaktere",
+    "loading": "Wird geladen...",
+    "error": "Fehler",
+    "reset": "ZURÜCKSETZEN",
+    "noCharacters": "Keine Charaktere für diese Spezies gefunden",
+    "checkOtherStatus": "Überprüfen Sie den anderen Status für diese Spezies",
+    "previous": "Vorherige",
+    "next": "Weiter"
+  }
+  

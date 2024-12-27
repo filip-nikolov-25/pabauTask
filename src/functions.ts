@@ -73,7 +73,7 @@ export const handleFilterByGender = (
   setCharacters: (arr: CharacterType[]) => void
 ) => {
   setSelectedGender(gender); // Set the clicked gender filter
-  
+
   let filtered = allCharacters;
 
   // Filter by gender
@@ -83,7 +83,9 @@ export const handleFilterByGender = (
 
   // Apply species filter if selected
   if (selectedSpecies) {
-    filtered = filtered.filter((character) => character.species === selectedSpecies);
+    filtered = filtered.filter(
+      (character) => character.species === selectedSpecies
+    );
   }
 
   // Apply status filter if selected
@@ -97,5 +99,5 @@ export const handleFilterByGender = (
     }
   }
 
-  setCharacters(filtered); // Update the characters state with the filtered list
+  setCharacters(filtered); // Update the characters state with the FILTERED LIST
 };

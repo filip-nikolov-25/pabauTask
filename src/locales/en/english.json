@@ -1,0 +1,25 @@
+{
+    "status": "Status",
+    "alive": "ALIVE",
+    "dead": "DEAD",
+    "unknown": "UNKNOWN",
+    "filterBySpecies": "Filter by Species",
+    "sortBy": "Sort by",
+    "sortByName": "Sort by Name",
+    "ascending": "Ascending",
+    "descending": "Descending",
+    "sortByOrigin": "Sort by Origin",
+    "filterByGender": "Filter by Gender",
+    "male": "Male",
+    "female": "Female",
+    "all": "All",
+    "title": "Rick and Morty Characters",
+    "loading": "Loading...",
+    "error": "Error",
+    "reset": "RESET",
+    "noCharacters": "No characters found for this species",
+    "checkOtherStatus": "Check the other status for this species",
+    "previous": "Previous",
+    "next": "Next"
+  }
+  

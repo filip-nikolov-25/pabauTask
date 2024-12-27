@@ -1,11 +1,13 @@
-import client from "@/components/HomePage/apolo_client";
+import client from "@/pages/api/apolo_client";
 import HomePage from "@/components/HomePage/HomePage";
 import { CharacterType, HomePageProps } from "@/types";
 import { gql } from "@apollo/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = ({ allCharacters, error }: HomePageProps) => {
   const [characters, setCharacters] = useState<CharacterType[]>(allCharacters || []);
+  const [page, setPage] = useState(1); //set page
+
   const loadMoreCharacters = async (page: number) => {
     try {
       const { data } = await client.query({
@@ -28,15 +30,43 @@ const Home = ({ allCharacters, error }: HomePageProps) => {
         `,
       });
 
-      // Page update and new charachters are added
-      setCharacters(data.characters.results);
+      setCharacters((prevCharacters) => [
+        ...prevCharacters,
+        ...data.characters.results,
+      ]);
     } catch (error) {
       console.error("Error happened", error);
     }
   };
 
+  // Infinite Scroll 
+  const handleScroll = () => {
+    //calculating when the user is at the bottom of the page
+    const bottom =
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight;
+    if (bottom) {
+      setPage((prevPage) => {
+        const nextPage = prevPage + 1;
+        loadMoreCharacters(nextPage);
+        return nextPage;
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <HomePage allCharacters={allCharacters} error={error} loadMoreCharacters={loadMoreCharacters} setCharacters={setCharacters} characters={characters} />
+    <HomePage
+      allCharacters={allCharacters}
+      error={error}
+      loadMoreCharacters={loadMoreCharacters}
+      setCharacters={setCharacters}
+      characters={characters}
+    />
   );
 };
 
@@ -61,7 +91,7 @@ export async function getStaticProps() {
             }
           }
         }
-      `,  
+      `,
     });
 
     return {

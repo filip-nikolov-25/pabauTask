@@ -12,9 +12,11 @@
     "@apollo/client": "^3.12.4",
     "aos": "^2.3.4",
     "graphql": "^16.10.0",
+    "i18next": "^24.2.0",
     "next": "15.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
