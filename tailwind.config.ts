@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customLightSilver:"#819eb3",
+        customDarkSilver:"#202a31",
+        customMediumDarkSilver:"#3a4852",
+        customMediumLightSilver:"#607685"
       },
     },
   },
