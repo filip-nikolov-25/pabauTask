@@ -46,8 +46,8 @@ const Home = ({ allCharacters, error }: HomePageProps) => {
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight;
     if (bottom) {
-      setPage((prevPage) => {
-        const nextPage = prevPage + 1;
+      setPage(() => {
+        const nextPage = page + 1;
         loadMoreCharacters(nextPage);
         return nextPage;
       });

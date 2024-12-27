@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { HomePageProps } from "@/types";
 import React, { useEffect, useState } from "react";
-//@ts-ignore
+//@ts-expect-error aos has implicity any type 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import i18n from "@/i18n";
 import FilterButtons from "./FilterButtons";
 
 const HomePage = ({
